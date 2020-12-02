@@ -63,4 +63,4 @@
    npm install node-red-node-aws
    ```
 4. Restart node-red.
-5. import `nodered-flow.json`. Don't foret AWS S3 configurations !!!
+5. Import node-red flow `nodered-flow.json`. Don't foret AWS S3 configurations !!!
