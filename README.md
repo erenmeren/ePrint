@@ -46,12 +46,12 @@
 3. Restart avahi => `/etc/init.d/avahi-daemon restart`
    
 ### AWS S3
-1. Create a new butcket on aws s3 name is `e-print`. 
-2. Create a folder which name is `bubu-coffe-shop`.
+1. Create a new butcket on aws s3 name is `e-print`
+2. Create a folder which name is `bubu-coffe-shop`
 
 ### NODE-RED
 
-1. Install node-red on App-Manager.
+1. Install node-red on App-Manager
 2. Install npm
    ```
    opkg update
