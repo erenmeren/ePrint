@@ -51,14 +51,16 @@
 
 ### NODE-RED
 
-1. Install npm
+1. Install node-red on App-Manager.
+2. Install npm
    ```
    opkg update
    opkg install node-npm
    ```
-2. Install aws s3 flow
+3. Install aws s3 flow
    ```
    cd /root/.node-red
    npm install node-red-node-aws
    ```
-3. Restart node-red and import `nodered-flow.json`. Don't foret AWS S3 configurations !!!
+4. Restart node-red.
+5. import `nodered-flow.json`. Don't foret AWS S3 configurations !!!
