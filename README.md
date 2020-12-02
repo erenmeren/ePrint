@@ -1,4 +1,4 @@
-# Bubu ePrint Doc
+# Bubu ePrint
 
 ### Firewall
 1. Modify your `/etc/config/firewall` to accept packets on on TCP port 9100
