@@ -11,8 +11,8 @@ TCP_PORT = 9100
 BUFFER_SIZE = 1024
 
 # aws s3
-BUCKET_NAME = 'eprint-test'
-FOLDER_NAME = 'bubu-coffee-shop/'
+AWS_S3_BUCKET_NAME = 'eprint-test'
+AWS_S3_FOLDER_NAME = 'bubu-coffee-shop/'
 
 class ClientThread(Thread):
 
@@ -42,7 +42,7 @@ def upload_file(file_name):
     # Upload the file
     s3_client = boto3.client('s3')
     try:
-        s3_client.upload_file( file_name, BUCKET_NAME, (FOLDER_NAME+str(time.time()).replace(".", "")+".pdf") )
+        s3_client.upload_file( file_name, AWS_S3_BUCKET_NAME, (AWS_S3_FOLDER_NAME+str(time.time()).replace(".", "")+".pdf") )
     except ClientError as e:
         logging.error(e)
         return False
