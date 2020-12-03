@@ -1,4 +1,4 @@
-# Bubu ePrint
+# Bubu ePrint Doc
 
 ### Firewall
 1. Modify your `/etc/config/firewall` to accept packets on on TCP port 9100
@@ -46,21 +46,54 @@
 3. Restart avahi => `/etc/init.d/avahi-daemon restart`
    
 ### AWS S3
-1. Create a new butcket on aws s3 name is `e-print`
-2. Create a folder which name is `bubu-coffe-shop`
+1. Create a new butcket on aws s3 name is `e-print`. 
+2. Create a folder which name is `bubu-coffe-shop`.
 
-### NODE-RED
+### via NODE-RED
 
-1. Install node-red on App-Manager
-2. Install npm
+1. Install npm
    ```
    opkg update
    opkg install node-npm
    ```
-3. Install aws s3 flow
+2. Install aws s3 flow
    ```
    cd /root/.node-red
    npm install node-red-node-aws
    ```
-4. Restart node-red.
-5. Import node-red flow `nodered-flow.json`. Don't foret AWS S3 configurations !!!
+3. Restart node-red and import `nodered-flow.json`. Don't foret AWS S3 configurations !!!
+
+### via Python
+
+1. Insatall python3
+   ```
+   opkg update
+   opkg install python3
+   ```
+2. Install pip
+   ```
+   opkg update
+   opkg install python3-pip
+   ```
+3. Install paho-mqtt
+   ```
+   pip3.6 install paho-mqtt
+   ```
+4. Install boto3 for AWS
+   ```
+   TMPDIR=/data/vincents/ pip3.6 install --cache-dir=/data/vincents/ --build /data/vincents/ boto3
+   ```
+5. Create AWS configuration files
+   - Create the directory `/root/.aws` directory
+   - Create the `/root/.aws/credentials` file
+      ```
+      [default]
+      aws_access_key_id = YOUR_ACCESS_KEY
+      aws_secret_access_key = YOUR_SECRET_KEY
+      ```
+   -  Create the `/root/.aws/config` file
+      ```
+      [default]
+      region=us-east-1
+      ```
+6. Copy `script.py` file under `/root` folder
