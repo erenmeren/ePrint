@@ -77,7 +77,7 @@
    ```
 3. Install paho-mqtt
    ```
-   pip3.6 install paho-mqtt
+   pip3 install paho-mqtt
    ```
 4. Install boto3 for AWS
    ```
@@ -94,6 +94,6 @@
    -  Create the `/root/.aws/config` file
       ```
       [default]
-      region=us-east-1
+      region=eu-west-2
       ```
 6. Copy `script.py` file under `/root` folder
